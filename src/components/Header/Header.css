@@ -1,0 +1,52 @@
+.header {
+  background-color: #465dff;
+  min-height: 74px;
+}
+
+.header__container-first {
+  max-width: 1142px;
+  margin: 0 auto;
+}
+
+.header__container-second {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 18px;
+}
+
+.header__logo {
+}
+
+.header__login {
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  margin-right: 30px;
+}
+
+.header__login:hover {
+  opacity: 0.7;
+  transition: opacity 1s linear 0.5s;
+}
+
+.header__button {
+  width: 76px;
+  height: 32px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: #000000;
+  background: #2be080;
+  border-radius: 3px;
+  cursor: pointer;
+  border: none;
+}
+
+.header__button:hover {
+  opacity: 0.6;
+  transition: opacity 1s linear 0.5s;
+}
