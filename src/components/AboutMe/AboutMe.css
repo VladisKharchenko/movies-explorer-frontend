@@ -1,0 +1,165 @@
+.aboutMe {
+  background-color: #ffffff;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.aboutMe__title-container {
+  padding-top: 110px;
+}
+
+.aboutMe__title {
+  color: #000000;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 26.63px;
+  letter-spacing: -1px;
+  margin: 0 0 23px 0;
+}
+
+.aboutMe__line {
+  border: 1px solid #000000;
+}
+
+.aboutMe__discription-container {
+  margin-top: 66px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.aboutMe__discription-text-container {
+}
+
+.aboutMe__discription-title {
+  color: #000000;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 58px;
+  letter-spacing: -1px;
+  margin: 0;
+}
+
+.aboutMe__discription-subtitle {
+  color: #000000;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 20px;
+  margin: 18px 0 0 0;
+}
+
+.aboutMe__discription-text {
+  color: #000000;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  margin: 26px 0 0 0;
+  max-width: 600px;
+}
+
+.aboutMe__discription-ghlink-text {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16.94px;
+  margin: 77px 0 0 0;
+}
+
+.aboutMe__discription-ghlink {
+  color: #000000;
+  text-decoration: none;
+}
+
+.aboutMe__discription-ghlink:hover {
+  opacity: 0.7;
+  transition: opacity 1s linear 0.5s;
+}
+
+.aboutMe__discription-img {
+  width: 270px;
+  height: 327px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .aboutMe {
+    max-width: 668px;
+  }
+  .aboutMe__title-container {
+    padding-top: 90px;
+  }
+  .aboutMe__discription-title {
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 40px;
+  }
+  .aboutMe__discription-subtitle {
+    font-size: 12px;
+    line-height: 18px;
+    margin-top: 15px;
+  }
+  .aboutMe__discription-text {
+    font-size: 12px;
+    line-height: 18px;
+    max-width: 364px;
+    margin-top: 20px;
+  }
+  .aboutMe__discription-ghlink-text {
+    margin-top: 52px;
+  }
+  .aboutMe__discription-img {
+    width: 255px;
+    height: 307px;
+  }
+}
+
+@media (max-width: 430px) {
+  .aboutMe__discription-container {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 59px;
+  }
+}
+
+@media (max-width: 320px) {
+  .aboutMe {
+    max-width: 292px;
+  }
+  .aboutMe__title-container {
+    padding-top: 51px;
+  }
+  .aboutMe__discription-title {
+    font-size: 30px;
+    line-height: 36.21px;
+    margin-top: 40px;
+  }
+  .aboutMe__discription-subtitle {
+    font-size: 11px;
+    line-height: 16px;
+    margin-top: 20px;
+  }
+  .aboutMe__discription-text {
+    font-size: 11px;
+    line-height: 16px;
+    max-width: 292px;
+  }
+  .aboutMe__title {
+    font-size: 18px;
+    line-height: 21.78px;
+    margin-bottom: 29px;
+  }
+  .aboutMe__discription-container {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 59px;
+  }
+  .aboutMe__discription-text-container {
+    order: 2;
+  }
+  .aboutMe__discription-ghlink-text {
+    margin-top: 9px;
+  }
+  .aboutMe__discription-img {
+    width: 292px;
+    height: 352px;
+  }
+}

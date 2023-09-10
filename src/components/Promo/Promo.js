@@ -9,9 +9,9 @@ function Promo() {
           className="promo__img"
           alt="Полупрозрачная буква П на фоне которой сетка из полупрозрачных линий и полупрозрачный круг"
         />
-        <p className="promo__text">
+        <h1 className="promo__text">
           Учебный проект студента факультета Веб-разработки.
-        </p>
+        </h1>
       </div>
     </section>
   );

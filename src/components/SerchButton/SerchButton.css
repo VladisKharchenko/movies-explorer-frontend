@@ -1,0 +1,25 @@
+.serchButton {
+  width: 80px;
+  height: 34px;
+  background-color: #ff6838;
+  background-image: url(../../images/serch-icon.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  border-radius: 40px;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 7px;
+  top: 67px;
+}
+
+.serchButton:hover {
+  opacity: 0.8;
+  transition: opacity 1s linear 0.5s;
+}
+
+@media (max-width: 768px) {
+  .serchButton {
+    top: 87px;
+  }
+}

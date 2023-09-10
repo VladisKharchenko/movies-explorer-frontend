@@ -1,0 +1,209 @@
+.register {
+  margin: 0 auto;
+  max-width: 381px;
+  padding-top: 70px;
+}
+
+.register__title {
+  color: #000000;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29.05px;
+  padding-top: 37px;
+  margin: 0;
+}
+
+.register__form {
+  padding-top: 40px;
+}
+
+.register__form-input-name {
+  color: #a0a0a0;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12.1px;
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+.fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-height: 66px;
+}
+
+.register__form-name-input {
+  width: 100%;
+  min-height: 46px;
+  border: none;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  color: #000000;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15.73px;
+  padding-left: 15px;
+  outline: none;
+}
+
+.register__form-name-input::placeholder {
+  color: #000000;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15.73px;
+}
+
+.register__form-email-input {
+  width: 100%;
+  min-height: 46px;
+  border: none;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  color: #000000;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15.73px;
+  padding-left: 15px;
+  outline: none;
+}
+
+.register__form-email-input::placeholder {
+  color: #000000;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15.73px;
+}
+
+.register__form-password-input {
+  width: 100%;
+  min-height: 46px;
+  border: none;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  color: #000000;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15.73px;
+  padding-left: 15px;
+  outline: none;
+}
+
+.register__form-password-input::placeholder {
+  color: #000000;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15.73px;
+}
+
+.register__form-submit {
+  border: none;
+  border-radius: 3px;
+  background-color: #ff6838;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16.94px;
+  cursor: pointer;
+  width: 396px;
+  height: 45px;
+  margin-top: 69px;
+}
+
+.register__form-submit:hover {
+  opacity: 0.8;
+  transition: opacity 1s linear 0.5s;
+}
+
+.ask__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 16px;
+  margin-left: 15px;
+}
+
+.ask__container-text {
+  color: #a0a0a0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16.94px;
+  margin: 0;
+  padding-right: 6px;
+}
+
+.ask__container-link {
+  color: #ff6838;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16.94px;
+  text-decoration: none;
+}
+
+.ask__container-link:hover {
+  opacity: 0.7;
+  transition: opacity 1s linear 0.5s;
+}
+
+.error-message {
+  color: #ee3465;
+  font-weight: 400;
+  font-size: 10px;
+  margin-top: 12.1px;
+  margin: 0;
+  padding-top: 7px;
+}
+
+@media (max-width: 420px) {
+  .register {
+    max-width: 260px;
+    padding-top: 56px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .register__title {
+    padding-top: 47px;
+  }
+  .register__form {
+    width: 100%;
+    padding-top: 80px;
+  }
+  .register__form-name-input {
+    padding-left: 0;
+  }
+  .register__form-name-input::placeholder {
+    padding-left: 15px;
+  }
+  .register__form-email-input {
+    padding-left: 0;
+  }
+  .register__form-email-input::placeholder {
+    padding-left: 15px;
+  }
+  .register__form-password-input {
+    padding-left: 0;
+  }
+  .register__form-password-input::placeholder {
+    padding-left: 15px;
+  }
+  .register__form-submit {
+    font-size: 12px;
+    line-height: 14.52px;
+    width: 260px;
+    margin-top: 159px;
+  }
+  .ask__container {
+    padding-top: 14px;
+    margin-left: 0;
+  }
+  .ask__container-text {
+    font-size: 12px;
+    line-height: 14.52px;
+    padding-right: 8px;
+  }
+  .ask__container-link {
+    font-size: 12px;
+    line-height: 14.52px;
+  }
+}

@@ -1,0 +1,17 @@
+.accountButton {
+  width: 100px;
+  height: 32px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  color: #000000;
+  background: #f9f9f9;
+  cursor: pointer;
+  border: none;
+  border-radius: 20px;
+}
+
+.accountButton:hover {
+  opacity: 0.8;
+  transition: opacity 1s linear 0.5s;
+}

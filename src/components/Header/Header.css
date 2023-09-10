@@ -1,5 +1,5 @@
 .header {
-  background-color: #465dff;
+  background-color: #465DFF;
   min-height: 74px;
 }
 
@@ -47,6 +47,27 @@
 }
 
 .header__button:hover {
-  opacity: 0.6;
+  opacity: 0.8;
   transition: opacity 1s linear 0.5s;
+}
+
+@media (max-width: 768px) {
+  .header__container-first {
+    max-width: 708px;
+  }
+}
+
+@media (max-width: 320px) {
+  .header__container-first {
+    max-width: 292px;
+  }
+  .header__login {
+    font-size: 10px;
+    margin-right: 14px;
+  }
+  .header__button {
+    width: 54px;
+    height: 26px;
+    font-size: 10px;
+  }
 }
