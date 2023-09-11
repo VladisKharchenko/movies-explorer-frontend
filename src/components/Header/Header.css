@@ -1,5 +1,5 @@
 .header {
-  background-color: #465DFF;
+  background-color: #465dff;
   min-height: 74px;
 }
 
@@ -51,16 +51,25 @@
   transition: opacity 1s linear 0.5s;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1165px) {
   .header__container-first {
     max-width: 708px;
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 730px) {
+  .header__container-first {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 420px) {
   .header__container-first {
     max-width: 292px;
   }
+}
+
+@media (max-width: 320px) {
   .header__login {
     font-size: 10px;
     margin-right: 14px;

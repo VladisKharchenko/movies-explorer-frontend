@@ -11,15 +11,21 @@ function SearchForm() {
 
   return (
     <section className="searchForm">
-      <div className="searchForm__input-container">
-        <input className="searchForm__input" placeholder="Фильм"></input>
-        <SerchButton />
-      </div>
-      <div className='filterCheckbox-container'>
-        <FilterCheckbox checked={isChecked} onChange={handleCheckboxChange} />
-        <p className='filterCheckbox-text'>Короткометражки</p>
-      </div>
-      <div className="searchForm__line"></div>
+      <form>
+        <div className="searchForm__input-container">
+          <input
+            className="searchForm__input"
+            placeholder="Фильм"
+            required
+          ></input>
+          <SerchButton />
+        </div>
+        <div className="filterCheckbox-container">
+          <FilterCheckbox checked={isChecked} onChange={handleCheckboxChange} />
+          <p className="filterCheckbox-text">Короткометражки</p>
+        </div>
+        <div className="searchForm__line"></div>
+      </form>
     </section>
   );
 }

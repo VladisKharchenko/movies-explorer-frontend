@@ -1,5 +1,5 @@
 .burgerMenu {
-  width: 509px;
+  width: 520px;
   height: 100vh;
   background-color: #ffffff;
   position: fixed;
@@ -26,7 +26,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 161px;
+  padding-top: 160px;
 }
 
 .burgerMenu__list {
@@ -72,8 +72,7 @@
     width: 320px;
   }
   .burgerMenu__container {
-    padding-top: 155px;
-    padding-left: 25px;
+    padding-top: 145px;
   }
   .burgerMenu__item {
     margin-bottom: 24px;

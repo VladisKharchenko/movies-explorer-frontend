@@ -12,9 +12,14 @@
   justify-content: center;
 }
 
+.movieLikeButton:hover {
+  opacity: 0.8;
+  transition: opacity 1s linear 0.5s;
+}
+
 .movieLikeButton__inner {
   width: 13px;
   height: 13px;
-  background-color: #F9F9F9;
+  background-color: #f9f9f9;
   border-radius: 50%;
 }

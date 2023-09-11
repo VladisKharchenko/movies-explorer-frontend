@@ -7,14 +7,14 @@ import Portfolio from '../Portfolio/Portfolio.js';
 
 function Main() {
   return (
-    <div>
+    <main>
       <Promo />
       <NavTab />
       <AboutProject />
       <Techs />
       <AboutMe />
       <Portfolio />
-    </div>
+    </main>
   );
 }
 

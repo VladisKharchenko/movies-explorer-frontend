@@ -6,7 +6,7 @@ function MoviesCard() {
     <div className="card">
       <img src={movieImage} className="card__img" alt="Обложка фильма"></img>
       <div className="card__heading-container">
-        <p className="card__heading">33 слова о дизайне</p>
+        <h2 className="card__heading">33 слова о дизайне</h2>
         <MovieLikeButton />
       </div>
       <p className="card__time">1ч42м</p>

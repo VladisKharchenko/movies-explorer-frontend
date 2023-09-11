@@ -1,6 +1,6 @@
 .login {
   margin: 0 auto;
-  max-width: 381px;
+  max-width: 398px;
   padding-top: 70px;
 }
 
@@ -43,8 +43,12 @@
   font-weight: 400;
   font-size: 13px;
   line-height: 15.73px;
-  padding-left: 15px;
-  outline: none;
+  outline: 1px solid #e8e8e8;
+}
+
+.login__form-email-input:focus {
+  outline: 2px solid #e8e8e8;
+  box-shadow: 0 0 5px rgba(255, 104, 56, 0.5);
 }
 
 .login__form-email-input::placeholder {
@@ -52,6 +56,7 @@
   font-weight: 400;
   font-size: 13px;
   line-height: 15.73px;
+  padding-left: 15px;
 }
 
 .login__form-password-input {
@@ -64,8 +69,12 @@
   font-weight: 400;
   font-size: 13px;
   line-height: 15.73px;
-  padding-left: 15px;
-  outline: none;
+  outline: 1px solid #e8e8e8;
+}
+
+.login__form-password-input:focus {
+  outline: 2px solid #e8e8e8;
+  box-shadow: 0 0 5px rgba(255, 104, 56, 0.5);
 }
 
 .login__form-password-input::placeholder {
@@ -73,6 +82,7 @@
   font-weight: 400;
   font-size: 13px;
   line-height: 15.73px;
+  padding-left: 15px;
 }
 
 .login__form-submit {
@@ -94,15 +104,14 @@
   transition: opacity 1s linear 0.5s;
 }
 
-.ask__container-login {
+.login__ask-container {
   display: flex;
   align-items: center;
   justify-content: center;
   padding-top: 16px;
-  margin-left: 15px;
 }
 
-.ask__container-text-login {
+.login__ask-container-text {
   color: #a0a0a0;
   font-weight: 400;
   font-size: 14px;
@@ -111,7 +120,7 @@
   padding-right: 6px;
 }
 
-.ask__container-link-login {
+.login__ask-container-link {
   color: #ff6838;
   font-weight: 400;
   font-size: 14px;
@@ -119,7 +128,7 @@
   text-decoration: none;
 }
 
-.ask__container-link-login:hover {
+.login__ask-container-link:hover {
   opacity: 0.7;
   transition: opacity 1s linear 0.5s;
 }
@@ -131,6 +140,16 @@
   margin-top: 12.1px;
   margin: 0;
   padding-top: 7px;
+}
+
+@media (max-width: 768px) {
+  .login {
+    padding-top: 232px;
+    max-width: 382px;
+  }
+  .login__ask-container {
+    margin-left: 15px;
+  }
 }
 
 @media (max-width: 420px) {
@@ -166,16 +185,16 @@
     width: 260px;
     margin-top: 247px;
   }
-  .ask__container-login {
+  .login__ask-container {
     padding-top: 14px;
     margin-left: 0;
   }
-  .ask__container-text-login {
+  .login__ask-container-text {
     font-size: 12px;
     line-height: 14.52px;
     padding-right: 8px;
   }
-  .ask__container-link-login {
+  .login__ask-container-link {
     font-size: 12px;
     line-height: 14.52px;
   }

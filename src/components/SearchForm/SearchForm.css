@@ -5,13 +5,11 @@
 
 .searchForm__input-container {
   position: relative;
-  overflow: hidden;
-  white-space: nowrap;
 }
 
 .searchForm__input {
   margin-top: 60px;
-  min-width: 1113px;
+  width: 100%;
   min-height: 46px;
   background-color: #f9f9f9;
   border: none;
@@ -20,8 +18,12 @@
   font-weight: 400;
   font-size: 13px;
   line-height: 17px;
-  outline: none;
-  padding-left: 22px;
+  outline: 1px solid #e8e8e8;
+}
+
+.searchForm__input:focus {
+  outline: 2px solid #e8e8e8;
+  box-shadow: 0 0 5px rgba(255, 104, 56, 0.5);
 }
 
 .searchForm__input::placeholder {
@@ -29,6 +31,7 @@
   font-weight: 400;
   font-size: 13px;
   line-height: 17px;
+  padding-left: 22px;
 }
 
 .filterCheckbox-container {
@@ -52,27 +55,30 @@
   margin-bottom: 10px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1170px) {
   .searchForm {
     max-width: 708px;
   }
+}
+
+@media (max-width: 768px) {
   .searchForm__input {
     margin-top: 80px;
-    min-width: 686px;
   }
   .filterCheckbox-container {
     margin-bottom: 38px;
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 730px) {
   .searchForm {
     max-width: 292px;
   }
+}
+
+@media (max-width: 320px) {
   .searchForm__input {
-    min-width: 270px;
     font-size: 11px;
-    padding-left: 20px;
   }
   .searchForm__input::placeholder {
     font-size: 11px;

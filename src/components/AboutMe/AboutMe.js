@@ -35,7 +35,7 @@ function AboutMe() {
         <img
           src={photoMe}
           className="aboutMe__discription-img"
-          alt="Мое фото"
+          alt="Фото молодого парня, который одет в костюм и сидит сложив руки в замок из пальцев"
         />
       </div>
     </section>

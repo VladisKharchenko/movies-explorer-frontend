@@ -62,19 +62,25 @@
   transition: opacity 1s linear 0.5s;
 }
 
-@media (max-width: 768px) {
-  .footer {
-    background-color: #ffffff;
-  }
+@media (max-width: 1170px) {
   .footer__container {
     max-width: 708px;
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 768px) {
+  .footer {
+    background-color: #ffffff;
+  }
+}
+
+@media (max-width: 690px) {
   .footer__container {
     max-width: 300px;
   }
+}
+
+@media (max-width: 320px) {
   .footer__title {
     font-size: 12px;
     line-height: 14.52px;

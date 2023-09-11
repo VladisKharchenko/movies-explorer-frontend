@@ -7,38 +7,78 @@ function MoviesCardList() {
   const isMoviesRoute = location.pathname === '/movies';
   const isSavedMoviesRoute = location.pathname === '/saved-movies';
 
-  const paddingBottomStyle = isSavedMoviesRoute ? { paddingBottom: '170px' } : {};
+  const paddingBottomStyle = isSavedMoviesRoute
+    ? { paddingBottom: '170px' }
+    : {};
 
   return (
-    <div className="moviesCardList" style={paddingBottomStyle}>
+    <ul className="moviesCardList" style={paddingBottomStyle}>
       {isMoviesRoute && (
         <>
-          <MoviesCard />
-          <MoviesCard />
-          <MoviesCard />
-          <MoviesCard />
-          <MoviesCard />
-          <MoviesCard />
-          <MoviesCard />
-          <MoviesCard />
-          <MoviesCard />
-          <MoviesCard />
-          <MoviesCard />
-          <MoviesCard />
-          <MoviesCard />
-          <MoviesCard />
-          <MoviesCard />
-          <MoviesCard />
+          <li className="moviesCardList__item">
+            <MoviesCard />
+          </li>
+          <li className="moviesCardList__item">
+            <MoviesCard />
+          </li>
+          <li className="moviesCardList__item">
+            <MoviesCard />
+          </li>
+          <li className="moviesCardList__item">
+            <MoviesCard />
+          </li>
+          <li className="moviesCardList__item">
+            <MoviesCard />
+          </li>
+          <li className="moviesCardList__item">
+            <MoviesCard />
+          </li>
+          <li className="moviesCardList__item">
+            <MoviesCard />
+          </li>
+          <li className="moviesCardList__item">
+            <MoviesCard />
+          </li>
+          <li className="moviesCardList__item">
+            <MoviesCard />
+          </li>
+          <li className="moviesCardList__item">
+            <MoviesCard />
+          </li>
+          <li className="moviesCardList__item">
+            <MoviesCard />
+          </li>
+          <li className="moviesCardList__item">
+            <MoviesCard />
+          </li>
+          <li className="moviesCardList__item">
+            <MoviesCard />
+          </li>
+          <li className="moviesCardList__item">
+            <MoviesCard />
+          </li>
+          <li className="moviesCardList__item">
+            <MoviesCard />
+          </li>
+          <li className="moviesCardList__item">
+            <MoviesCard />
+          </li>
         </>
       )}
       {isSavedMoviesRoute && (
         <>
-          <MoviesCard />
-          <MoviesCard />
-          <MoviesCard />
+          <li className="moviesCardList__item">
+            <MoviesCard />
+          </li>
+          <li className="moviesCardList__item">
+            <MoviesCard />
+          </li>
+          <li className="moviesCardList__item">
+            <MoviesCard />
+          </li>
         </>
       )}
-    </div>
+    </ul>
   );
 }
 

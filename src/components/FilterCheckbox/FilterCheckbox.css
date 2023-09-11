@@ -28,11 +28,16 @@
   z-index: 2;
 }
 
+.filterCheckbox:hover {
+  opacity: 0.8;
+  transition: opacity 1s linear 0.5s;
+}
+
 .filterCheckbox__input:checked + .filterCheckbox {
   background-color: #2be080;
 }
 
 .filterCheckbox__input:checked + .filterCheckbox__slider {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   transform: translateX(16px);
 }

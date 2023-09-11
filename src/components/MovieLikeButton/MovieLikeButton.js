@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import blackСross from '../../images/black-cross.png';
+import blackСross from '../../images/black-cross.svg';
 
 function MovieLikeButton() {
   const [isLiked, setIsLiked] = useState(false);

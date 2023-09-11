@@ -4,11 +4,11 @@ import Preloader from '../Preloader/Preloader.js';
 
 function Movies() {
   return (
-    <div>
+    <main>
       <SearchForm />
       <MoviesCardList />
       <Preloader />
-    </div>
+    </main>
   );
 }
 export default Movies;

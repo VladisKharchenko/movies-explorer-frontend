@@ -13,27 +13,27 @@ function Techs() {
             дипломном проекте.
           </p>
         </div>
-        <div className="techs_icons">
-          <div className="techs_icon-container">
-            <p className="techs_icon">HTML</p>
+        <div className="techs__icons">
+          <div className="techs__icon-container">
+            <p className="techs__icon">HTML</p>
           </div>
-          <div className="techs_icon-container">
-            <p className="techs_icon">CSS</p>
+          <div className="techs__icon-container">
+            <p className="techs__icon">CSS</p>
           </div>
-          <div className="techs_icon-container">
-            <p className="techs_icon">JS</p>
+          <div className="techs__icon-container">
+            <p className="techs__icon">JS</p>
           </div>
-          <div className="techs_icon-container">
-            <p className="techs_icon">React</p>
+          <div className="techs__icon-container">
+            <p className="techs__icon">React</p>
           </div>
-          <div className="techs_icon-container">
-            <p className="techs_icon">Git</p>
+          <div className="techs__icon-container">
+            <p className="techs__icon">Git</p>
           </div>
-          <div className="techs_icon-container">
-            <p className="techs_icon">Express.js</p>
+          <div className="techs__icon-container">
+            <p className="techs__icon">Express.js</p>
           </div>
-          <div className="techs_icon-container">
-            <p className="techs_icon">mongoDB</p>
+          <div className="techs__icon-container">
+            <p className="techs__icon">mongoDB</p>
           </div>
         </div>
       </div>

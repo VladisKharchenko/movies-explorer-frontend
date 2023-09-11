@@ -80,10 +80,13 @@
   object-fit: cover;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1170px) {
   .aboutMe {
     max-width: 668px;
   }
+}
+
+@media (max-width: 768px) {
   .aboutMe__title-container {
     padding-top: 90px;
   }
@@ -112,18 +115,21 @@
   }
 }
 
-@media (max-width: 430px) {
+@media (max-width: 690px) {
+  .aboutMe {
+    max-width: 292px;
+  }
   .aboutMe__discription-container {
     flex-direction: column;
     align-items: center;
     margin-top: 59px;
   }
+  .aboutMe__discription-text-container {
+    margin-bottom: 59px;
+  }
 }
 
 @media (max-width: 320px) {
-  .aboutMe {
-    max-width: 292px;
-  }
   .aboutMe__title-container {
     padding-top: 51px;
   }
@@ -154,6 +160,7 @@
   }
   .aboutMe__discription-text-container {
     order: 2;
+    margin-bottom: 0;
   }
   .aboutMe__discription-ghlink-text {
     margin-top: 9px;
