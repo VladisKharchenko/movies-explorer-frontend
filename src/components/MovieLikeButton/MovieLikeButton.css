@@ -1,0 +1,25 @@
+.movieLikeButton {
+  padding: 0;
+  width: 16px;
+  height: 16px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.09);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.movieLikeButton:hover {
+  opacity: 0.8;
+  transition: opacity 1s linear 0.5s;
+}
+
+.movieLikeButton__inner {
+  width: 13px;
+  height: 13px;
+  background-color: #f9f9f9;
+  border-radius: 50%;
+}
