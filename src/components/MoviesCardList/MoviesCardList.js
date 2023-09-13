@@ -12,73 +12,75 @@ function MoviesCardList() {
     : {};
 
   return (
-    <ul className="moviesCardList" style={paddingBottomStyle}>
-      {isMoviesRoute && (
-        <>
-          <li className="moviesCardList__item">
-            <MoviesCard />
-          </li>
-          <li className="moviesCardList__item">
-            <MoviesCard />
-          </li>
-          <li className="moviesCardList__item">
-            <MoviesCard />
-          </li>
-          <li className="moviesCardList__item">
-            <MoviesCard />
-          </li>
-          <li className="moviesCardList__item">
-            <MoviesCard />
-          </li>
-          <li className="moviesCardList__item">
-            <MoviesCard />
-          </li>
-          <li className="moviesCardList__item">
-            <MoviesCard />
-          </li>
-          <li className="moviesCardList__item">
-            <MoviesCard />
-          </li>
-          <li className="moviesCardList__item">
-            <MoviesCard />
-          </li>
-          <li className="moviesCardList__item">
-            <MoviesCard />
-          </li>
-          <li className="moviesCardList__item">
-            <MoviesCard />
-          </li>
-          <li className="moviesCardList__item">
-            <MoviesCard />
-          </li>
-          <li className="moviesCardList__item">
-            <MoviesCard />
-          </li>
-          <li className="moviesCardList__item">
-            <MoviesCard />
-          </li>
-          <li className="moviesCardList__item">
-            <MoviesCard />
-          </li>
-          <li className="moviesCardList__item">
-            <MoviesCard />
-          </li>
-        </>
-      )}
-      {isSavedMoviesRoute && (
-        <>
-          <li className="moviesCardList__item">
-            <MoviesCard />
-          </li>
-          <li className="moviesCardList__item">
-            <MoviesCard />
-          </li>
-          <li className="moviesCardList__item">
-            <MoviesCard />
-          </li>
-        </>
-      )}
-    </ul>
+    <section>
+      <ul className="moviesCardList" style={paddingBottomStyle}>
+        {isMoviesRoute && (
+          <>
+            <li className="moviesCardList__item">
+              <MoviesCard />
+            </li>
+            <li className="moviesCardList__item">
+              <MoviesCard />
+            </li>
+            <li className="moviesCardList__item">
+              <MoviesCard />
+            </li>
+            <li className="moviesCardList__item">
+              <MoviesCard />
+            </li>
+            <li className="moviesCardList__item">
+              <MoviesCard />
+            </li>
+            <li className="moviesCardList__item">
+              <MoviesCard />
+            </li>
+            <li className="moviesCardList__item">
+              <MoviesCard />
+            </li>
+            <li className="moviesCardList__item">
+              <MoviesCard />
+            </li>
+            <li className="moviesCardList__item">
+              <MoviesCard />
+            </li>
+            <li className="moviesCardList__item">
+              <MoviesCard />
+            </li>
+            <li className="moviesCardList__item">
+              <MoviesCard />
+            </li>
+            <li className="moviesCardList__item">
+              <MoviesCard />
+            </li>
+            <li className="moviesCardList__item">
+              <MoviesCard />
+            </li>
+            <li className="moviesCardList__item">
+              <MoviesCard />
+            </li>
+            <li className="moviesCardList__item">
+              <MoviesCard />
+            </li>
+            <li className="moviesCardList__item">
+              <MoviesCard />
+            </li>
+          </>
+        )}
+        {isSavedMoviesRoute && (
+          <>
+            <li className="moviesCardList__item">
+              <MoviesCard />
+            </li>
+            <li className="moviesCardList__item">
+              <MoviesCard />
+            </li>
+            <li className="moviesCardList__item">
+              <MoviesCard />
+            </li>
+          </>
+        )}
+      </ul>
+    </section>
   );
 }
 

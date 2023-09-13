@@ -1,9 +1,9 @@
-import promoImg from '../../images/promo-img.png';
+import promoImg from '../../images/promo-img.svg';
 
 function Promo() {
   return (
     <section className="promo">
-      <div className='promo__container'>
+      <div className="promo__container">
         <img
           src={promoImg}
           className="promo__img"
