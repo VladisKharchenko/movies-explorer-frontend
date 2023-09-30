@@ -25,8 +25,8 @@ function Login({ handleLogin, registrationError }) {
     const value = e.target.value;
     setPassword(value);
 
-    if (value.length < 2 || value.length > 40) {
-      setPasswordError('Пароль должен содержать от 2 до 40 символов');
+    if (value.length < 8) {
+      setPasswordError('Пароль должен содержать от 8 символов');
     } else {
       setPasswordError('');
     }
@@ -36,7 +36,7 @@ function Login({ handleLogin, registrationError }) {
     const isEmailValid = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(
       email
     );
-    const isPasswordValid = password.length >= 2 && password.length <= 40;
+    const isPasswordValid = password.length >= 8;
 
     setIsFormValid(isEmailValid && isPasswordValid);
   }, [email, password]);
@@ -69,8 +69,6 @@ function Login({ handleLogin, registrationError }) {
               name="email-login"
               placeholder="E-mail"
               className="login__form-email-input"
-              minLength="2"
-              maxLength="40"
               required
               value={email}
               onChange={handleEmailChange}
@@ -84,8 +82,6 @@ function Login({ handleLogin, registrationError }) {
               name="password-login"
               placeholder="Пароль"
               className="login__form-password-input"
-              minLength="2"
-              maxLength="200"
               required
               value={password}
               onChange={handlePasswordChange}

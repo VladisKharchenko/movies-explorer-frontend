@@ -7,9 +7,7 @@ function Profile({ handleLogout, handleUpdateProfile, registrationError }) {
   const currentUser = useContext(CurrentUserContext);
   const [userName, setUserName] = useState('');
   const [userEmail, setUserEmail] = useState('');
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [isFormValid, setIsFormValid] = useState(false);
+  const [isFormValid, setIsFormValid] = useState(true);
   const [nameError, setNameError] = useState('');
   const [emailError, setEmailError] = useState('');
   const [isDataChanged, setIsDataChanged] = useState(false);
@@ -20,36 +18,33 @@ function Profile({ handleLogout, handleUpdateProfile, registrationError }) {
   }, [currentUser.name, currentUser.email]);
 
   useEffect(() => {
-    const isNameValid = name.length >= 2 && name.length <= 40;
+    const isNameValid = userName.length >= 2 && userName.length <= 30;
     const isEmailValid = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(
-      email
+      userEmail
     );
-
     setIsFormValid(isNameValid && isEmailValid);
-  }, [name, email]);
+  }, [userName, userEmail]);
 
   useEffect(() => {
-    setIsDataChanged(userEmail !== currentUser.email);
-  }, [userEmail, currentUser]);
+    setIsDataChanged(
+      userEmail !== currentUser.email || userName !== currentUser.name
+    );
+  }, [userName, userEmail, currentUser]);
 
   const handleNameChange = (e) => {
-    setUserName(e.target.value);
-
     const value = e.target.value;
-    setName(value);
+    setUserName(value);
 
-    if (value.length < 2 || value.length > 40) {
-      setNameError('Имя должно содержать от 2 до 40 символов');
+    if (value.length < 2 || value.length > 30) {
+      setNameError('Имя должно содержать от 2 до 30 символов');
     } else {
       setNameError('');
     }
   };
 
   const handleEmailChange = (e) => {
-    setUserEmail(e.target.value);
-
     const value = e.target.value;
-    setEmail(value);
+    setUserEmail(value);
 
     const emailPattern = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
     if (!emailPattern.test(value)) {
@@ -80,7 +75,7 @@ function Profile({ handleLogout, handleUpdateProfile, registrationError }) {
   const handleLogoutSubmit = (e) => {
     handleLogout();
   };
-
+  console.log(isDataChanged);
   return (
     <>
       <Header />
@@ -97,7 +92,7 @@ function Profile({ handleLogout, handleUpdateProfile, registrationError }) {
                     className="profile__input"
                     placeholder="Владислав"
                     minLength="2"
-                    maxLength="40"
+                    maxLength="30"
                     required
                     value={userName}
                     onChange={handleNameChange}
@@ -114,8 +109,6 @@ function Profile({ handleLogout, handleUpdateProfile, registrationError }) {
                     type="email"
                     className="profile__input"
                     placeholder="pochta@yandex.ru"
-                    minLength="2"
-                    maxLength="40"
                     required
                     value={userEmail}
                     onChange={handleEmailChange}

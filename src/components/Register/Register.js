@@ -15,8 +15,8 @@ function Register({ handleRegister, registrationError }) {
     const value = e.target.value;
     setName(value);
 
-    if (value.length < 2 || value.length > 40) {
-      setNameError('Имя должно содержать от 2 до 40 символов');
+    if (value.length < 2 || value.length > 30) {
+      setNameError('Имя должно содержать от 2 до 30 символов');
     } else {
       setNameError('');
     }
@@ -38,19 +38,19 @@ function Register({ handleRegister, registrationError }) {
     const value = e.target.value;
     setPassword(value);
 
-    if (value.length < 2 || value.length > 40) {
-      setPasswordError('Пароль должен содержать от 2 до 40 символов');
+    if (value.length < 8) {
+      setPasswordError('Пароль должен содержать от 8 символов');
     } else {
       setPasswordError('');
     }
   };
 
   useEffect(() => {
-    const isNameValid = name.length >= 2 && name.length <= 40;
+    const isNameValid = name.length >= 2 && name.length <= 30;
     const isEmailValid = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(
       email
     );
-    const isPasswordValid = password.length >= 2 && password.length <= 40;
+    const isPasswordValid = password.length >= 8;
 
     setIsFormValid(isNameValid && isEmailValid && isPasswordValid);
   }, [name, email, password]);
@@ -83,7 +83,7 @@ function Register({ handleRegister, registrationError }) {
               placeholder="Имя"
               className="register__form-name-input"
               minLength="2"
-              maxLength="40"
+              maxLength="30"
               required
               value={name}
               onChange={handleNameChange}
@@ -97,8 +97,6 @@ function Register({ handleRegister, registrationError }) {
               name="email"
               placeholder="E-mail"
               className="register__form-email-input"
-              minLength="2"
-              maxLength="40"
               required
               value={email}
               onChange={handleEmailChange}
@@ -112,8 +110,6 @@ function Register({ handleRegister, registrationError }) {
               name="password"
               placeholder="Пароль"
               className="register__form-password-input"
-              minLength="2"
-              maxLength="40"
               required
               value={password}
               onChange={handlePasswordChange}
