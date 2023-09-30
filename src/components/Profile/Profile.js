@@ -75,7 +75,7 @@ function Profile({ handleLogout, handleUpdateProfile, registrationError }) {
   const handleLogoutSubmit = (e) => {
     handleLogout();
   };
-  console.log(isDataChanged);
+
   return (
     <>
       <Header />
