@@ -1,14 +1,15 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Logo from '../Logo/Logo.js';
 import AccountButton from '../AccountButton/AccountButton.js';
 import Navigation from '../Navigation/Navigation.js';
 import BurgerButton from '../BurgerButton/BurgerButton.js';
+import CurrentUserContext from '../../contexts/CurrentUserContext.js';
 
-function Header() {
+function Header({}) {
   const location = useLocation();
   const [isSmallScreen, setIsSmallScreen] = useState(false);
-  const isUserLoggedIn = false;
+  const currentUser = useContext(CurrentUserContext);
 
   const isHomeRoute = location.pathname === '/';
 
@@ -35,9 +36,9 @@ function Header() {
       <div className="header__container-first">
         <div className="header__container-second">
           <Logo />
-          {isUserLoggedIn && !isSmallScreen && <Navigation />}
+          {currentUser.email && !isSmallScreen && <Navigation />}
           <div>
-            {isUserLoggedIn ? (
+            {currentUser.email ? (
               isSmallScreen ? (
                 <BurgerButton />
               ) : (

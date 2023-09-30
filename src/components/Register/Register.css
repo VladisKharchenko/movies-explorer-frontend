@@ -122,12 +122,17 @@
   cursor: pointer;
   width: 396px;
   height: 45px;
-  margin-top: 69px;
 }
 
 .register__form-submit:hover {
   opacity: 0.8;
   transition: opacity 1s linear 0.5s;
+}
+
+.register__form-submit.disabled {
+  background-color: #f8f8f8;
+  color: #c2c2c2;
+  cursor: not-allowed;
 }
 
 .register__ask-container {
@@ -163,18 +168,30 @@
   color: #ee3465;
   font-weight: 400;
   font-size: 10px;
-  margin-top: 12.1px;
   margin: 0;
   padding-top: 7px;
+}
+
+.error-server-message {
+  color: #ee3465;
+  font-weight: 400;
+  font-size: 10px;
+  margin: 0;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.fieldset-for-submit-error {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-height: 70px;
 }
 
 @media (max-width: 768px) {
   .register {
     padding-top: 232px;
-    max-width: 382px;
-  }
-  .register__ask-container {
-    margin-left: 15px;
+    max-width: 396px;
   }
 }
 
@@ -215,7 +232,6 @@
     font-size: 12px;
     line-height: 14.52px;
     width: 260px;
-    margin-top: 159px;
   }
   .register__ask-container {
     padding-top: 14px;
@@ -229,5 +245,11 @@
   .register__ask-container-link {
     font-size: 12px;
     line-height: 14.52px;
+  }
+  .fieldset-for-submit-error {
+    min-height: 159px;
+  }
+  .error-server-message {
+    padding-top: 139px;
   }
 }

@@ -13,6 +13,10 @@
   list-style-type: none;
 }
 
+.moviesCardList_type_savedMovies {
+  padding-bottom: 170px;
+}
+
 @media (max-width: 1157px) {
   .moviesCardList {
     max-width: 560px;

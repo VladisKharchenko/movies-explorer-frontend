@@ -18,8 +18,10 @@
 .card__heading-container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding-top: 11px;
   padding-left: 12px;
+  max-width: 246px;
 }
 
 .card__heading {
@@ -28,7 +30,9 @@
   font-size: 13px;
   line-height: 15.73px;
   margin: 0;
-  padding-right: 103px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .card__time {
@@ -51,8 +55,8 @@
     width: 339px;
     height: 190px;
   }
-  .card__heading {
-    padding-right: 174px;
+  .card__heading-container {
+    max-width: 315px;
   }
 }
 
@@ -68,9 +72,7 @@
   .card__heading-container {
     padding-top: 10px;
     padding-left: 11px;
-  }
-  .card__heading {
-    padding-right: 134px;
+    max-width: 276px;
   }
   .card__time {
     padding-left: 10px;
