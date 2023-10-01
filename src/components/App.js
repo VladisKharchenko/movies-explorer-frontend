@@ -52,7 +52,6 @@ function App() {
   const [nextLoadingMoviesCounter, setNextLoadingMoviesCounter] = useState(0);
   const [displayedMoviesCounter, setDisplayedMoviesCounter] = useState(0);
   const [isEditing, setIsEditing] = useState(false);
-  const [isLoadingFetch, setIsLoadingFetch] = useState(false);
 
   const checkTokenAndSetUser = useCallback(() => {
     return checkToken()
