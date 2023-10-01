@@ -51,6 +51,7 @@ function Movies({
           onSearch={onSearch}
           onToggle={handleChangeToggle}
           isToggle={isToggle}
+          isLoading={isLoading}
           name="movies"
         />
         {isLoading && <Preloader />}

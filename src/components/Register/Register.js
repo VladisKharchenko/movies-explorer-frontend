@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../Logo/Logo.js';
 
-function Register({ handleRegister, registrationError }) {
+function Register({ handleRegister, submitMessage, isLoading }) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -117,8 +117,8 @@ function Register({ handleRegister, registrationError }) {
             {passwordError && <p className="error-message">{passwordError}</p>}
           </fieldset>
           <fieldset className="fieldset-for-submit-error">
-            {registrationError && (
-              <p className="error-server-message">{registrationError}</p>
+            {submitMessage && (
+              <p className="error-server-message">{submitMessage}</p>
             )}
           </fieldset>
           <button
@@ -126,7 +126,7 @@ function Register({ handleRegister, registrationError }) {
             className={`register__form-submit ${
               isFormValid ? 'active' : 'disabled'
             }`}
-            disabled={!isFormValid}
+            disabled={!isFormValid || isLoading}
           >
             Зарегистрироваться
           </button>

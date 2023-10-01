@@ -2,8 +2,14 @@ import { useState, useEffect, useContext } from 'react';
 import CurrentUserContext from '../../contexts/CurrentUserContext.js';
 import Header from '../Header/Header.js';
 
-function Profile({ handleLogout, handleUpdateProfile, registrationError }) {
-  const [isEditing, setIsEditing] = useState(false);
+function Profile({
+  handleLogout,
+  handleUpdateProfile,
+  onEdit,
+  submitMessage,
+  isEditing,
+  isLoading,
+}) {
   const currentUser = useContext(CurrentUserContext);
   const [userName, setUserName] = useState('');
   const [userEmail, setUserEmail] = useState('');
@@ -11,6 +17,10 @@ function Profile({ handleLogout, handleUpdateProfile, registrationError }) {
   const [nameError, setNameError] = useState('');
   const [emailError, setEmailError] = useState('');
   const [isDataChanged, setIsDataChanged] = useState(false);
+
+  useEffect(() => {
+    onEdit(false);
+  }, []);
 
   useEffect(() => {
     setUserName(currentUser?.name);
@@ -54,10 +64,6 @@ function Profile({ handleLogout, handleUpdateProfile, registrationError }) {
     }
   };
 
-  const handleEditClick = () => {
-    setIsEditing(!isEditing);
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -69,7 +75,10 @@ function Profile({ handleLogout, handleUpdateProfile, registrationError }) {
     const email = userEmail;
 
     handleUpdateProfile(name, email);
-    setIsEditing(false);
+  };
+
+  const handleEdit = () => {
+    onEdit(true);
   };
 
   const handleLogoutSubmit = (e) => {
@@ -119,10 +128,8 @@ function Profile({ handleLogout, handleUpdateProfile, registrationError }) {
               </fieldset>
             </div>
             <fieldset className="fieldset-for-change-avatar-error">
-              {registrationError && (
-                <p className="profile-error-server-message">
-                  {registrationError}
-                </p>
+              {submitMessage && (
+                <p className="profile-error-server-message">{submitMessage}</p>
               )}
             </fieldset>
             {isEditing ? (
@@ -132,7 +139,7 @@ function Profile({ handleLogout, handleUpdateProfile, registrationError }) {
                   className={`profile__save-button ${
                     isDataChanged && isFormValid ? 'active' : 'disabled'
                   }`}
-                  disabled={!isDataChanged || !isFormValid}
+                  disabled={!isDataChanged || !isFormValid || isLoading}
                 >
                   Сохранить
                 </button>
@@ -144,7 +151,7 @@ function Profile({ handleLogout, handleUpdateProfile, registrationError }) {
           <div className="profile__links-container">
             <button
               type="button"
-              onClick={handleEditClick}
+              onClick={handleEdit}
               className="profile__edit-button"
             >
               Редактировать
@@ -165,3 +172,13 @@ function Profile({ handleLogout, handleUpdateProfile, registrationError }) {
 }
 
 export default Profile;
+/*
+{registrationError && (
+                <p className="profile-error-server-message">
+                  {registrationError}
+                </p>
+              )}
+              {isProfileSaved && (
+                <p className="profile__save-message">{profileSaveMessage}</p>
+              )}
+*/

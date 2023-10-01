@@ -16,7 +16,7 @@ export const getUserInfo = () => {
       }
     })
     .catch((error) => {
-      console.log(error);
+      return Promise.reject(error);
     });
 };
 
@@ -36,7 +36,7 @@ export const getSavedMovies = () => {
       }
     })
     .catch((error) => {
-      console.log(error);
+      return Promise.reject(error);
     });
 };
 
@@ -57,7 +57,7 @@ export const addMovie = (movieData) => {
       }
     })
     .catch((error) => {
-      console.log(error);
+      return Promise.reject(error);
     });
 };
 
@@ -77,7 +77,7 @@ export const deleteMovie = (movieId) => {
       }
     })
     .catch((error) => {
-      console.log(error);
+      return Promise.reject(error);
     });
 };
 
@@ -104,7 +104,6 @@ export const changeProfile = (name, email) => {
       }
     })
     .catch((error) => {
-      console.log(error);
       throw error;
     });
 };
@@ -129,7 +128,6 @@ export const register = (name, email, password) => {
       }
     })
     .catch((error) => {
-      console.log(error);
       throw error;
     });
 };
@@ -154,7 +152,6 @@ export const login = (email, password) => {
       }
     })
     .catch((error) => {
-      console.log(error);
       throw error;
     });
 };
@@ -178,7 +175,6 @@ export const checkToken = () => {
       }
     })
     .catch((error) => {
-      console.log(error);
       throw error;
     });
 };
@@ -199,6 +195,6 @@ export const logout = () => {
       }
     })
     .catch((error) => {
-      console.log(error);
+      throw error;
     });
 };

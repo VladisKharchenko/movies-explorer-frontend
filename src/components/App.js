@@ -24,13 +24,13 @@ import { getMovies } from '../utils/MoviesApi.js';
 import { getFilterMovies } from '../utils/utils.js';
 import {
   NEXT_MOVIES_1280,
-  NEXT_MOVIES_320,
+  NEXT_MOVIES_480,
   NEXT_MOVIES_768,
   START_MOVIES_1280,
-  START_MOVIES_320,
+  START_MOVIES_480,
   START_MOVIES_768,
   WINDOW_1280,
-  WINDOW_768,
+  WINDOW_480,
   initialCurrentUser,
 } from '../utils/constants.js';
 
@@ -39,7 +39,7 @@ function App() {
   const location = useLocation();
   const [currentUser, setCurrentUser] = useState({ name: '', email: '' });
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [registrationError, setRegistrationError] = useState('');
+  const [submitMessage, setSubmitMessage] = useState('');
   const [savedMovies, setSavedMovies] = useState([]);
   const [allMovies, setAllMovies] = useState([]);
   const [searchedSavedMovies, setSearchedSavedMovies] = useState([]);
@@ -51,6 +51,8 @@ function App() {
   const [moviesCounter, setMoviesCounter] = useState(0);
   const [nextLoadingMoviesCounter, setNextLoadingMoviesCounter] = useState(0);
   const [displayedMoviesCounter, setDisplayedMoviesCounter] = useState(0);
+  const [isEditing, setIsEditing] = useState(false);
+  const [isLoadingFetch, setIsLoadingFetch] = useState(false);
 
   const checkTokenAndSetUser = useCallback(() => {
     return checkToken()
@@ -93,7 +95,7 @@ function App() {
       location.pathname === '/signup' ||
       location.pathname === '/signin'
     ) {
-      setRegistrationError('');
+      setSubmitMessage('');
     }
   }, [location.pathname]);
 
@@ -149,28 +151,34 @@ function App() {
   };
 
   const handleRegister = (name, email, password) => {
+    setIsLoading(true);
     register(name, email, password)
       .then(() => {
         handleLogin(email, password);
+        setSubmitMessage('');
       })
       .catch((error) => {
-        setRegistrationError(error);
+        setSubmitMessage(error);
         console.error(error);
-      });
+      })
+      .finally(() => setIsLoading(false));
   };
 
   const handleLogin = (email, password) => {
+    setIsLoading(true);
     login(email, password)
       .then(() => {
+        setSubmitMessage('');
         return checkTokenAndSetUser();
       })
       .then(() => {
         navigate('/movies', { replace: true });
       })
       .catch((error) => {
-        setRegistrationError(error);
+        setSubmitMessage(error);
         console.error(error);
-      });
+      })
+      .finally(() => setIsLoading(false));
   };
 
   const handleLogout = () => {
@@ -185,6 +193,10 @@ function App() {
         console.log(error);
       });
   };
+
+  function handleEdit(state) {
+    setIsEditing(state);
+  }
 
   const isLiked = (movieId) => {
     return savedMovies.some((movie) => movie.movieId === movieId);
@@ -229,14 +241,20 @@ function App() {
   }
 
   const handleUpdateProfile = (name, email) => {
+    setIsLoading(true);
     changeProfile(name, email)
       .then((updatedUser) => {
         setCurrentUser(updatedUser);
-        setRegistrationError('');
+        setSubmitMessage('Профиль успешно изменен');
+        setTimeout(() => setSubmitMessage(''), 1000);
+        setIsEditing(false);
       })
       .catch((error) => {
-        setRegistrationError(error);
+        setSubmitMessage(error);
         console.log('Ошибка при обновлении профиля:', error);
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
   };
 
@@ -244,6 +262,12 @@ function App() {
     const [startMovies, nextMovies] = getMoviesCounter();
     setNextLoadingMoviesCounter(nextMovies);
     setMoviesCounter(startMovies);
+    if (
+      displayedMoviesCounter < moviesCounter &&
+      searchedMovies.length > moviesCounter
+    ) {
+      setDisplayedMoviesCounter(startMovies);
+    }
   }
 
   function handleMoreButton() {
@@ -262,12 +286,16 @@ function App() {
     if (windowScreenWidth >= WINDOW_1280) {
       return [START_MOVIES_1280, NEXT_MOVIES_1280];
     }
-    if (windowScreenWidth >= WINDOW_768 && windowScreenWidth < WINDOW_1280) {
+    if (windowScreenWidth > WINDOW_480 && windowScreenWidth < WINDOW_1280) {
       return [START_MOVIES_768, NEXT_MOVIES_768];
     }
-    if (windowScreenWidth < WINDOW_768) {
-      return [START_MOVIES_320, NEXT_MOVIES_320];
+    if (windowScreenWidth <= WINDOW_480) {
+      return [START_MOVIES_480, NEXT_MOVIES_480];
     }
+  }
+
+  function handleBack() {
+    navigate(-1);
   }
 
   return (
@@ -324,7 +352,10 @@ function App() {
                     currentUser={currentUser}
                     handleLogout={handleLogout}
                     handleUpdateProfile={handleUpdateProfile}
-                    registrationError={registrationError}
+                    submitMessage={submitMessage}
+                    onEdit={handleEdit}
+                    isEditing={isEditing}
+                    isLoading={isLoading}
                   />
                 }
               />
@@ -338,7 +369,8 @@ function App() {
                 element={
                   <Register
                     handleRegister={handleRegister}
-                    registrationError={registrationError}
+                    submitMessage={submitMessage}
+                    isLoading={isLoading}
                   />
                 }
               />
@@ -352,13 +384,14 @@ function App() {
                 element={
                   <Login
                     handleLogin={handleLogin}
-                    registrationError={registrationError}
+                    submitMessage={submitMessage}
+                    isLoading={isLoading}
                   />
                 }
               />
             }
           />
-          <Route path="*" element={<NotFoundPage />} />
+          <Route path="*" element={<NotFoundPage onBack={handleBack} />} />
         </Routes>
       </CurrentUserContext.Provider>
     </div>

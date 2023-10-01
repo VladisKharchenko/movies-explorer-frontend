@@ -25,6 +25,8 @@
 }
 
 .notFoundPage__link {
+  all: unset;
+  cursor: pointer;
   color: #ff6838;
   font-weight: 400;
   font-size: 14px;

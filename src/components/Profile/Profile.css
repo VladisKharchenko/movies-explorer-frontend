@@ -162,6 +162,15 @@
   min-height: 202px;
 }
 
+.profile__save-message {
+  color: #2be080;
+  font-weight: 400;
+  font-size: 10px;
+  margin: 0;
+  text-align: center;
+  padding-top: 180px;
+}
+
 @media (max-width: 768px) {
   .profile__title {
     margin-top: 236px;
@@ -177,6 +186,9 @@
     min-height: 183px;
   }
   .profile-error-server-message {
+    padding-top: 165px;
+  }
+  .profile__save-message {
     padding-top: 165px;
   }
 }
@@ -209,6 +221,9 @@
     line-height: 14.52px;
   }
   .profile-error-server-message {
+    padding-top: 335px;
+  }
+  .profile__save-message {
     padding-top: 335px;
   }
 }

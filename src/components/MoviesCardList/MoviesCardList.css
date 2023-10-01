@@ -25,18 +25,12 @@
 
 @media (max-width: 768px) {
   .moviesCardList {
-    max-width: 708px;
+    max-width: 339px;
     gap: 36px 30px;
   }
 }
 
-@media (max-width: 725px) {
-  .moviesCardList {
-    max-width: 345px;
-  }
-}
-
-@media (max-width: 360px) {
+@media (max-width: 480px) {
   .moviesCardList {
     max-width: 297px;
   }
