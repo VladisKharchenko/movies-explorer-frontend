@@ -46,7 +46,7 @@
   padding-bottom: 14px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .card {
     max-height: 257px;
     max-width: 339px;

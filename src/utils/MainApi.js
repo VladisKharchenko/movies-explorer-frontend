@@ -7,17 +7,13 @@ export const getUserInfo = () => {
       'Content-Type': 'application/json',
     },
     credentials: 'include',
-  })
-    .then((response) => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        return Promise.reject(`Ошибка: ${response.status}`);
-      }
-    })
-    .catch((error) => {
-      return Promise.reject(error);
-    });
+  }).then((response) => {
+    if (response.ok) {
+      return response.json();
+    } else {
+      return Promise.reject(`Ошибка: ${response.status}`);
+    }
+  });
 };
 
 export const getSavedMovies = () => {
@@ -27,17 +23,13 @@ export const getSavedMovies = () => {
       'Content-Type': 'application/json',
     },
     credentials: 'include',
-  })
-    .then((response) => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        return Promise.reject(`Ошибка: ${response.status}`);
-      }
-    })
-    .catch((error) => {
-      return Promise.reject(error);
-    });
+  }).then((response) => {
+    if (response.ok) {
+      return response.json();
+    } else {
+      return Promise.reject(`Ошибка: ${response.status}`);
+    }
+  });
 };
 
 export const addMovie = (movieData) => {
@@ -48,17 +40,13 @@ export const addMovie = (movieData) => {
     },
     credentials: 'include',
     body: JSON.stringify(movieData),
-  })
-    .then((response) => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        return Promise.reject(`Ошибка: ${response.status}`);
-      }
-    })
-    .catch((error) => {
-      return Promise.reject(error);
-    });
+  }).then((response) => {
+    if (response.ok) {
+      return response.json();
+    } else {
+      return Promise.reject(`Ошибка: ${response.status}`);
+    }
+  });
 };
 
 export const deleteMovie = (movieId) => {
@@ -68,17 +56,13 @@ export const deleteMovie = (movieId) => {
       'Content-Type': 'application/json',
     },
     credentials: 'include',
-  })
-    .then((response) => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        return Promise.reject(`Ошибка: ${response.status}`);
-      }
-    })
-    .catch((error) => {
-      return Promise.reject(error);
-    });
+  }).then((response) => {
+    if (response.ok) {
+      return response.json();
+    } else {
+      return Promise.reject(`Ошибка: ${response.status}`);
+    }
+  });
 };
 
 export const changeProfile = (name, email) => {
@@ -92,20 +76,16 @@ export const changeProfile = (name, email) => {
       email: email,
     }),
     credentials: 'include',
-  })
-    .then((response) => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        return response.json().then((data) => {
-          const error = data.message || `Ошибка: ${response.status}`;
-          throw error;
-        });
-      }
-    })
-    .catch((error) => {
-      throw error;
-    });
+  }).then((response) => {
+    if (response.ok) {
+      return response.json();
+    } else {
+      return response.json().then((data) => {
+        const error = data.message || `Ошибка: ${response.status}`;
+        throw error;
+      });
+    }
+  });
 };
 
 export const register = (name, email, password) => {
@@ -116,20 +96,16 @@ export const register = (name, email, password) => {
     },
     credentials: 'include',
     body: JSON.stringify({ name, email, password }),
-  })
-    .then((response) => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        return response.json().then((data) => {
-          const error = data.message || `Ошибка: ${response.status}`;
-          throw error;
-        });
-      }
-    })
-    .catch((error) => {
-      throw error;
-    });
+  }).then((response) => {
+    if (response.ok) {
+      return response.json();
+    } else {
+      return response.json().then((data) => {
+        const error = data.message || `Ошибка: ${response.status}`;
+        throw error;
+      });
+    }
+  });
 };
 
 export const login = (email, password) => {
@@ -140,20 +116,16 @@ export const login = (email, password) => {
     },
     credentials: 'include',
     body: JSON.stringify({ email, password }),
-  })
-    .then((response) => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        return response.json().then((data) => {
-          const error = data.message || `Ошибка: ${response.status}`;
-          throw error;
-        });
-      }
-    })
-    .catch((error) => {
-      throw error;
-    });
+  }).then((response) => {
+    if (response.ok) {
+      return response.json();
+    } else {
+      return response.json().then((data) => {
+        const error = data.message || `Ошибка: ${response.status}`;
+        throw error;
+      });
+    }
+  });
 };
 
 export const checkToken = () => {
@@ -163,20 +135,16 @@ export const checkToken = () => {
       'Content-Type': 'application/json',
     },
     credentials: 'include',
-  })
-    .then((response) => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        return response.json().then((data) => {
-          const error = data.message || `Ошибка: ${response.status}`;
-          throw error;
-        });
-      }
-    })
-    .catch((error) => {
-      throw error;
-    });
+  }).then((response) => {
+    if (response.ok) {
+      return response.json();
+    } else {
+      return response.json().then((data) => {
+        const error = data.message || `Ошибка: ${response.status}`;
+        throw error;
+      });
+    }
+  });
 };
 
 export const logout = () => {
@@ -186,15 +154,11 @@ export const logout = () => {
       'Content-Type': 'application/json',
     },
     credentials: 'include',
-  })
-    .then((response) => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        return Promise.reject(`Ошибка: ${response.status}`);
-      }
-    })
-    .catch((error) => {
-      throw error;
-    });
+  }).then((response) => {
+    if (response.ok) {
+      return response.json();
+    } else {
+      return Promise.reject(`Ошибка: ${response.status}`);
+    }
+  });
 };
