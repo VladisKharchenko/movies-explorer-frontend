@@ -96,12 +96,17 @@
   cursor: pointer;
   width: 396px;
   height: 45px;
-  margin-top: 159px;
 }
 
 .login__form-submit:hover {
   opacity: 0.8;
   transition: opacity 1s linear 0.5s;
+}
+
+.login__form-submit.disabled {
+  background-color: #f8f8f8;
+  color: #c2c2c2;
+  cursor: not-allowed;
 }
 
 .login__ask-container {
@@ -137,18 +142,30 @@
   color: #ee3465;
   font-weight: 400;
   font-size: 10px;
-  margin-top: 12.1px;
   margin: 0;
   padding-top: 7px;
+}
+
+.error-server-message-login {
+  color: #ee3465;
+  font-weight: 400;
+  font-size: 10px;
+  margin: 0;
+  text-align: center;
+  padding-top: 138px;
+}
+
+.fieldset-for-submit-login-error {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-height: 158px;
 }
 
 @media (max-width: 768px) {
   .login {
     padding-top: 232px;
-    max-width: 382px;
-  }
-  .login__ask-container {
-    margin-left: 15px;
+    max-width: 396px;
   }
 }
 
@@ -183,7 +200,6 @@
     font-size: 12px;
     line-height: 14.52px;
     width: 260px;
-    margin-top: 247px;
   }
   .login__ask-container {
     padding-top: 14px;
@@ -197,5 +213,11 @@
   .login__ask-container-link {
     font-size: 12px;
     line-height: 14.52px;
+  }
+  .fieldset-for-submit-login-error {
+    min-height: 247px;
+  }
+  .error-server-message-login {
+    padding-top: 227px;
   }
 }

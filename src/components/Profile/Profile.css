@@ -50,7 +50,6 @@
 
 .profile__line {
   border: 1px solid #e8e8e8;
-  margin-top: 12px;
   margin-bottom: 14px;
 }
 
@@ -63,7 +62,15 @@
 
 .profile__links-container {
   max-width: 410px;
-  margin: 217px auto 0;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile__submit-container {
+  max-width: 410px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -79,13 +86,15 @@
   cursor: pointer;
 }
 
-.profile__out-link {
-  text-decoration: none;
+.profile__out-button {
+  border: none;
+  background-color: transparent;
   color: #ff004d;
   font-weight: 500;
   font-size: 13px;
   line-height: 15.73px;
   margin-top: 16px;
+  cursor: pointer;
 }
 
 .profile__save-button {
@@ -101,19 +110,65 @@
   height: 45px;
 }
 
+.profile__save-button.disabled {
+  background-color: #f8f8f8;
+  color: #c2c2c2;
+  cursor: not-allowed;
+}
+
 .profile__edit-button:hover {
   opacity: 0.8;
   transition: opacity 1s linear 0.5s;
 }
 
-.profile__out-link:hover {
-  opacity: 0.7;
+.profile__out-button:hover {
+  opacity: 0.8;
   transition: opacity 1s linear 0.5s;
 }
 
 .profile__save-button:hover {
   opacity: 0.8;
   transition: opacity 1s linear 0.5s;
+}
+
+.profile__fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-height: 34px;
+}
+
+.error-message {
+  color: #ee3465;
+  font-weight: 400;
+  font-size: 10px;
+  margin: 0;
+  padding-top: 7px;
+}
+
+.profile-error-server-message {
+  color: #ee3465;
+  font-weight: 400;
+  font-size: 10px;
+  margin: 0;
+  text-align: center;
+  padding-top: 180px;
+}
+
+.fieldset-for-change-avatar-error {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-height: 202px;
+}
+
+.profile__save-message {
+  color: #2be080;
+  font-weight: 400;
+  font-size: 10px;
+  margin: 0;
+  text-align: center;
+  padding-top: 180px;
 }
 
 @media (max-width: 768px) {
@@ -125,11 +180,16 @@
     width: 412px;
   }
   .profile__line {
-    margin-top: 14px;
     margin-bottom: 17px;
   }
-  .profile__links-container {
-    margin-top: 208px;
+  .fieldset-for-change-avatar-error {
+    min-height: 183px;
+  }
+  .profile-error-server-message {
+    padding-top: 165px;
+  }
+  .profile__save-message {
+    padding-top: 165px;
   }
 }
 
@@ -144,8 +204,8 @@
   .profile__input-container {
     width: 262px;
   }
-  .profile__links-container {
-    margin-top: 377px;
+  .fieldset-for-change-avatar-error {
+    min-height: 353px;
   }
   .profile__save-button {
     font-size: 12px;
@@ -156,8 +216,14 @@
     font-size: 12px;
     line-height: 14.52px;
   }
-  .profile__out-link {
+  .profile__out-button {
     font-size: 12px;
     line-height: 14.52px;
+  }
+  .profile-error-server-message {
+    padding-top: 335px;
+  }
+  .profile__save-message {
+    padding-top: 335px;
   }
 }

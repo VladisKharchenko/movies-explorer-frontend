@@ -1,9 +1,20 @@
+import React, { useState, useEffect } from 'react';
+
 function FilterCheckbox({ checked, onChange }) {
+  //const [localChecked, setLocalChecked] = useState(checked);
+
+  /*useEffect(() => {
+    localStorage.setItem('filterCheckboxChecked', localChecked);
+  }, [localChecked]);*/
+
+  /*const handleCheckboxChange = () => {
+    const newChecked = !localChecked;
+    setLocalChecked(newChecked);
+    onChange(newChecked);
+  };*/
+
   return (
-    <label
-      className="filterCheckbox"
-      style={{ backgroundColor: checked ? '#2be080' : '#ebebeb' }}
-    >
+    <label className="filterCheckbox">
       <input
         type="checkbox"
         className="filterCheckbox__input"

@@ -1,13 +1,67 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../Logo/Logo.js';
 
-function Login() {
+function Login({ handleLogin, submitMessage, isLoading }) {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [isFormValid, setIsFormValid] = useState(false);
+  const [emailError, setEmailError] = useState('');
+  const [passwordError, setPasswordError] = useState('');
+
+  const handleEmailChange = (e) => {
+    const value = e.target.value;
+    setEmail(value);
+
+    const emailPattern = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+    if (!emailPattern.test(value)) {
+      setEmailError('Введите корректный адрес электронной почты');
+    } else {
+      setEmailError('');
+    }
+  };
+
+  const handlePasswordChange = (e) => {
+    const value = e.target.value;
+    setPassword(value);
+
+    if (value.length < 8) {
+      setPasswordError('Пароль должен содержать от 8 символов');
+    } else {
+      setPasswordError('');
+    }
+  };
+
+  useEffect(() => {
+    const isEmailValid = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(
+      email
+    );
+    const isPasswordValid = password.length >= 8;
+
+    setIsFormValid(isEmailValid && isPasswordValid);
+  }, [email, password]);
+
+  const handleLoginSubmit = (e) => {
+    e.preventDefault();
+
+    if (!isFormValid) {
+      return;
+    }
+
+    const email = e.target.querySelector('input[name="email-login"]').value;
+    const password = e.target.querySelector(
+      'input[name="password-login"]'
+    ).value;
+
+    handleLogin(email, password);
+  };
+
   return (
     <main>
       <section className="login">
         <Logo />
         <h1 className="login__title">Рады видеть!</h1>
-        <form className="login__form">
+        <form className="login__form" onSubmit={handleLoginSubmit}>
           <p className="login__form-input-name">E-mail</p>
           <fieldset className="fieldset-login">
             <input
@@ -15,10 +69,11 @@ function Login() {
               name="email-login"
               placeholder="E-mail"
               className="login__form-email-input"
-              minLength="2"
-              maxLength="40"
               required
+              value={email}
+              onChange={handleEmailChange}
             />
+            {emailError && <p className="error-message-login">{emailError}</p>}
           </fieldset>
           <p className="login__form-input-name">Пароль</p>
           <fieldset className="fieldset-login">
@@ -27,13 +82,26 @@ function Login() {
               name="password-login"
               placeholder="Пароль"
               className="login__form-password-input"
-              minLength="2"
-              maxLength="200"
               required
+              value={password}
+              onChange={handlePasswordChange}
             />
-            {/*{registerError && <p className="error-message-login">{registerError}</p>}*/}
+            {passwordError && (
+              <p className="error-message-login">{passwordError}</p>
+            )}
           </fieldset>
-          <button type="submit" className="login__form-submit">
+          <fieldset className="fieldset-for-submit-login-error">
+            {submitMessage && (
+              <p className="error-server-message-login">{submitMessage}</p>
+            )}
+          </fieldset>
+          <button
+            type="submit"
+            className={`login__form-submit ${
+              isFormValid ? 'active' : 'disabled'
+            }`}
+            disabled={!isFormValid || isLoading}
+          >
             Войти
           </button>
         </form>

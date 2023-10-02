@@ -23,3 +23,7 @@
   background-color: #f9f9f9;
   border-radius: 50%;
 }
+
+.movieLikeButton__inner_liked {
+  background-color: #2be080;
+}

@@ -1,84 +1,33 @@
-import { useLocation } from 'react-router-dom';
 import MoviesCard from '../MoviesCard/MoviesCard.js';
 
-function MoviesCardList() {
-  const location = useLocation();
-
-  const isMoviesRoute = location.pathname === '/movies';
-  const isSavedMoviesRoute = location.pathname === '/saved-movies';
-
-  const paddingBottomStyle = isSavedMoviesRoute
-    ? { paddingBottom: '170px' }
-    : {};
-
+function MoviesCardList({
+  displayedMovies,
+  onAddMovie,
+  onDeleteMovie,
+  isLiked,
+  location,
+}) {
   return (
     <section>
-      <ul className="moviesCardList" style={paddingBottomStyle}>
-        {isMoviesRoute && (
-          <>
-            <li className="moviesCardList__item">
-              <MoviesCard />
-            </li>
-            <li className="moviesCardList__item">
-              <MoviesCard />
-            </li>
-            <li className="moviesCardList__item">
-              <MoviesCard />
-            </li>
-            <li className="moviesCardList__item">
-              <MoviesCard />
-            </li>
-            <li className="moviesCardList__item">
-              <MoviesCard />
-            </li>
-            <li className="moviesCardList__item">
-              <MoviesCard />
-            </li>
-            <li className="moviesCardList__item">
-              <MoviesCard />
-            </li>
-            <li className="moviesCardList__item">
-              <MoviesCard />
-            </li>
-            <li className="moviesCardList__item">
-              <MoviesCard />
-            </li>
-            <li className="moviesCardList__item">
-              <MoviesCard />
-            </li>
-            <li className="moviesCardList__item">
-              <MoviesCard />
-            </li>
-            <li className="moviesCardList__item">
-              <MoviesCard />
-            </li>
-            <li className="moviesCardList__item">
-              <MoviesCard />
-            </li>
-            <li className="moviesCardList__item">
-              <MoviesCard />
-            </li>
-            <li className="moviesCardList__item">
-              <MoviesCard />
-            </li>
-            <li className="moviesCardList__item">
-              <MoviesCard />
-            </li>
-          </>
-        )}
-        {isSavedMoviesRoute && (
-          <>
-            <li className="moviesCardList__item">
-              <MoviesCard />
-            </li>
-            <li className="moviesCardList__item">
-              <MoviesCard />
-            </li>
-            <li className="moviesCardList__item">
-              <MoviesCard />
-            </li>
-          </>
-        )}
+      <ul
+        className={`moviesCardList ${
+          location === 'savedMovies' ? 'moviesCardList_type_savedMovies' : ''
+        }`}
+      >
+        {displayedMovies.map((movie) => (
+          <li
+            className="moviesCardList__item"
+            key={movie.id ? movie.id : movie.movieId}
+          >
+            <MoviesCard
+              movie={movie}
+              onAddMovie={onAddMovie}
+              onDeleteMovie={onDeleteMovie}
+              isLiked={isLiked}
+              location={location}
+            />
+          </li>
+        ))}
       </ul>
     </section>
   );
